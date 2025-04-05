@@ -13,7 +13,7 @@ connectDB();  // Connect to MongoDB
 
 // ✅ CORS Configuration
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://webbrick.com'],  
+  origin: ['http://localhost:5173', 'https://webbrick-backend.onrender.com'],  
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
