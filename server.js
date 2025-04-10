@@ -13,7 +13,7 @@ connectDB();  // Connect to MongoDB
 
 // ✅ CORS Configuration
 const corsOptions = {
-  origin: ['https://webbrick-frontend.vercel.app', 'http://localhost:5173'],
+  origin: ['https://webbrick.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
