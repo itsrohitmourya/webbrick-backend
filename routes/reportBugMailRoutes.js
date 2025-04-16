@@ -10,12 +10,17 @@ const router = express.Router();
 // ✅ Improved Multer Configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/');  // Save files in 'uploads' folder
+    const dir = 'uploads/';
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir); // ✅ Create folder if it doesn't exist
+    }
+    cb(null, dir);
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);  // Unique filename
+    cb(null, `${Date.now()}-${file.originalname}`);
   }
 });
+
 
 const upload = multer({
   storage: storage,
